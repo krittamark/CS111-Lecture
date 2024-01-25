@@ -26,7 +26,6 @@ public class Person {
      * Change the position of the person
      * @param   horizantalDistance The distance to move horizontally
      * @param   verticalDistance The distance to move vertically
-     * 
      */
     public void move(int horizantalDistance, int verticalDistance) {
         positionX = positionX + horizantalDistance;
