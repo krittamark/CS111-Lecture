@@ -7,7 +7,8 @@ public class FourWords {
   private String word4;
 
   public void add(String word) {
-    if (word4 != null) System.out.println("Can't add a new word " + word + "!");
+    if (word4 != null)
+      System.out.println("Can't add a new word " + word + "!");
 
     if (word1 == null) {
       word1 = word;
@@ -76,7 +77,9 @@ public class FourWords {
                     (word2 != null ? 1 : 0) +
                     (word3 != null ? 1 : 0) +
                     (word4 != null ? 1 : 0);
-    double averageLength = (wordCount >= 1) ? (double) getTotalLength() / wordCount : 0.0;
+    double averageLength =  (wordCount >= 1) ?
+                              (double) getTotalLength() / wordCount :
+                              0.0;
     
     System.out.printf(format, averageLength);
   }
