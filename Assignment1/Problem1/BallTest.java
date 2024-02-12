@@ -1,5 +1,8 @@
 // Author: Krittamet Damthongkam (กฤตเมธ ดำทองคำ)
 // Student ID: 6609490062
+
+package Problem1;
+
 import java.util.Scanner;
 
 public class BallTest {

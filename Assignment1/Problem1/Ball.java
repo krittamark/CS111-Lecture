@@ -1,5 +1,8 @@
 // Author: Krittamet Damthongkam (กฤตเมธ ดำทองคำ)
 // Student ID: 6609490062
+
+package Problem1;
+
 public class Ball {
   /**
    * The radius of the ball.
