@@ -1,3 +1,6 @@
+// Author: Krittamet Damthongkam (กฤตเมธ ดำทองคำ)
+// Student ID: 6609490062
+
 package Problem2;
 
 public class FourWords {
