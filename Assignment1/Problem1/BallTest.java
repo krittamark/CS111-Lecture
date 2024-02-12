@@ -1,6 +1,5 @@
 // Author: Krittamet Damthongkam (กฤตเมธ ดำทองคำ)
 // Student ID: 6609490062
-
 import java.util.Scanner;
 
 public class BallTest {
@@ -16,8 +15,8 @@ public class BallTest {
     double surfaceArea = ball.getSurface();
     double volume = ball.getVolume();
 
-    System.out.printf("The ball radius '%.2f' has surface area = %.3f%n", radius, surfaceArea);
-    System.out.printf("The ball radius '%.2f' has volume = %.3f%n", radius, volume);
+    System.out.printf("The ball radius '%.2f' has surface area =%.3f\n", radius, surfaceArea);
+    System.out.printf("The ball radius '%.2f' has volume =%.3f\n", radius, volume);
 
     scanner.close();
   }
