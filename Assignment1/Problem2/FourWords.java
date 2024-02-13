@@ -28,15 +28,15 @@ public class FourWords {
     if (word1 == null) System.out.println("No words set up yet!");
 
     System.out.println("List of words:");
-    if (word1 != null) System.out.printf("\t%s\n", word1);
-    if (word2 != null) System.out.printf("\t%s\n", word2);
-    if (word3 != null) System.out.printf("\t%s\n", word3);
-    if (word4 != null) System.out.printf("\t%s\n", word4);
+    if (word1 != null) System.out.printf("\t%s%n", word1);
+    if (word2 != null) System.out.printf("\t%s%n", word2);
+    if (word3 != null) System.out.printf("\t%s%n", word3);
+    if (word4 != null) System.out.printf("\t%s%n", word4);
     System.out.println();
 
     String lexicographicFormat = "The lexicographic %s is %s\n";
-    String totalLengthFormat = "Total length %d\n";
-    String averageFormat = "Average length %.6f\n\n";
+    String totalLengthFormat = "Total length %d%n";
+    String averageFormat = "Average length %.6f%n%n";
 
     int totalLength = (word1 != null ? word1.length() : 0) +
                       (word2 != null ? word2.length() : 0) +
