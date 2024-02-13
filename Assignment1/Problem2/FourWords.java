@@ -9,8 +9,10 @@ public class FourWords {
   private String word3;
   private String word4;
 
+  private int count;
+
   public void add(String word) {
-    if (word4 != null)
+    if (count >= 4)
       System.out.println("Can't add a new word " + word + "!");
 
     if (word1 == null) {
@@ -22,10 +24,11 @@ public class FourWords {
     } else if (word4 == null) {
       word4 = word;
     }
+    count++;
   }
 
   public void printWords() {
-    if (word1 == null) System.out.println("No words set up yet!");
+    if (count == 0) System.out.println("No words set up yet!");
 
     System.out.println("List of words:");
     if (word1 != null) System.out.printf("\t%s%n", word1);
@@ -43,13 +46,8 @@ public class FourWords {
                       (word3 != null ? word3.length() : 0) +
                       (word4 != null ? word4.length() : 0);
 
-    int wordCount = (word1 != null ? 1 : 0) +
-                    (word2 != null ? 1 : 0) +
-                    (word3 != null ? 1 : 0) +
-                    (word4 != null ? 1 : 0);
-
-    double averageLength =  (wordCount >= 1) ?
-                            (double) totalLength / wordCount :
+    double averageLength =  (count >= 1) ?
+                            (double) totalLength / count :
                             0.0;
 
     System.out.printf(lexicographicFormat, "minimum", getMin());
@@ -59,7 +57,7 @@ public class FourWords {
   }
 
   public String getMin() {
-    if (word1 == null) return null;
+    if (count == 0) return null;
 
     String minWord = word1;
     if (word2 != null && word2.compareTo(minWord) < 0) minWord = word2;
@@ -69,7 +67,7 @@ public class FourWords {
   }
 
   public String getMax() {
-    if (word1 == null) return null;
+    if (count == 0) return null;
 
     String maxWord = word1;
     if (word2 != null && word2.compareTo(maxWord) > 0) maxWord = word2;
