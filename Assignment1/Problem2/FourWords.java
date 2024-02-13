@@ -34,9 +34,28 @@ public class FourWords {
     if (word4 != null) System.out.printf("\t%s\n", word4);
     System.out.println();
 
-    printLexicographicMinMax("The lexicographic %s is %s\n");
-    printTotalLength("Total length %d\n");
-    printAverageLength("Average length %.6f\n\n");
+    String lexicographicFormat = "The lexicographic %s is %s\n";
+    String totalLengthFormat = "Total length %d\n";
+    String averageFormat = "Average length %.6f\n\n";
+
+    int totalLength = (word1 != null ? word1.length() : 0) +
+                      (word2 != null ? word2.length() : 0) +
+                      (word3 != null ? word3.length() : 0) +
+                      (word4 != null ? word4.length() : 0);
+
+    int wordCount = (word1 != null ? 1 : 0) +
+                    (word2 != null ? 1 : 0) +
+                    (word3 != null ? 1 : 0) +
+                    (word4 != null ? 1 : 0);
+
+    double averageLength =  (wordCount >= 1) ?
+                            (double) totalLength / wordCount :
+                            0.0;
+
+    System.out.printf(lexicographicFormat, "minimum", getMin());
+    System.out.printf(lexicographicFormat, "maximum", getMax());
+    System.out.printf(totalLengthFormat, totalLength);
+    System.out.printf(averageFormat, averageLength);
   }
 
   public String getMin() {
@@ -57,33 +76,5 @@ public class FourWords {
     if (word3 != null && word3.compareTo(maxWord) > 0) maxWord = word3;
     if (word4 != null && word4.compareTo(maxWord) > 0) maxWord = word4;
     return maxWord;
-  }
-
-  private void printLexicographicMinMax(String format) {
-    System.out.printf(format, "minimum", getMin());
-    System.out.printf(format, "maximum", getMax());
-  }
-
-  private int getTotalLength() {
-    return  (word1 != null ? word1.length() : 0) +
-            (word2 != null ? word2.length() : 0) +
-            (word3 != null ? word3.length() : 0) +
-            (word4 != null ? word4.length() : 0);
-  }
-
-  private void printTotalLength(String format) {
-    System.out.printf(format, getTotalLength());
-  }
-  
-  private void printAverageLength(String format) {
-    int wordCount = (word1 != null ? 1 : 0) +
-                    (word2 != null ? 1 : 0) +
-                    (word3 != null ? 1 : 0) +
-                    (word4 != null ? 1 : 0);
-    double averageLength =  (wordCount >= 1) ?
-                              (double) getTotalLength() / wordCount :
-                              0.0;
-    
-    System.out.printf(format, averageLength);
   }
 }
