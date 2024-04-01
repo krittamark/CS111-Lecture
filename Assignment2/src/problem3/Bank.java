@@ -85,6 +85,7 @@ public class Bank {
   }
 
   public ArrayList<Account> getAllAccounts() {
+    if (this.accountList.isEmpty()) return null;
     return accountList;
   }
 }

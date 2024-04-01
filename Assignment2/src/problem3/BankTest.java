@@ -63,6 +63,10 @@ public class BankTest {
   }
 
   private static void menuShowAccountDetail(Scanner scn) {
+    if (myBank.getAllAccounts() == null) {
+      System.out.print("[SHOW ACCOUNT]: There are no accounts yet. Please add an account with [MENU 1] first.");
+      return;
+    }
     System.out.print("[SHOW ACCOUNT]: An index of account to be shown: ");
     int accountIndex = scn.nextInt();
     Account account = myBank.getAccount(accountIndex);
@@ -70,6 +74,11 @@ public class BankTest {
   }
 
   private static void menuFindAccount(Scanner scn) {
+    if (myBank.getAllAccounts() == null) {
+      System.out.print("[FIND ACCOUNT]: There are no accounts yet. Please add an account with [MENU 1] first.");
+      return;
+    }
+
     System.out.print("[FIND ACCOUNT]: The account with amount: ");
     double balance = scn.nextDouble();
     ArrayList<Account> accounts = myBank.findAccounts(balance);
@@ -88,6 +97,11 @@ public class BankTest {
     System.out.printf("[FIND ACCOUNT]: The most balance: %.2f%n", myBank.findMax().getBalance());
   }
   private static void menuAddInterest(Scanner scn) {
+    if (myBank.getAllAccounts() == null) {
+      System.out.print("[INTEREST]: There are no accounts yet. Please add an account with [MENU 1] first.");
+      return;
+    }
+
     myBank.addInterest();
     System.out.printf("[INTEREST]: Successfully add an interest to all accounts%n");
     int accountIndex = 0;
